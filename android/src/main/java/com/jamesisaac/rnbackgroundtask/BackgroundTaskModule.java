@@ -78,12 +78,11 @@ public class BackgroundTaskModule extends ReactContextBaseJavaModule
 
         // Period can't be below 15m
         int period = config.getInt("period");
-        if (period < 900) { period = 900; }
+        if (period < 60) { period = 60; }
 
         // Flex must be between 5m and 15m
         int flex = config.getInt("flex");
-        if (flex < 300) { flex = 300; }
-        if (flex > 900) { flex = 900; }
+        if (flex < 30) { flex = 30; }
 
         // Extra info to store with the JobRequest
         PersistableBundleCompat extras = new PersistableBundleCompat();
